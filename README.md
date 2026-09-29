@@ -12,9 +12,8 @@ The project runs entirely in the browser and does not require a backend, databas
 
 Try Mood Check directly in your browser:
 
-**[▶ Check Your Mood](mood-check-seven.vercel.app)**
+**[▶ Check Your Mood](https://mood-check-seven.vercel.app/)**
 
-> Replace `YOUR_LIVE_URL` with your deployed GitHub Pages or Vercel URL.
 
 ---
 

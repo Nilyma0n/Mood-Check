@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mood Check — How Are You Feeling?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="mood-card">
+
+            <div class="emoji" id="mainEmoji">🌸</div>
+
+            <p class="eyebrow">MOOD CHECK</p>
+
+            <h1>How are you feeling today?</h1>
+
+            <p class="subtitle">
+                Take a moment, describe your mood, and let's check in with you.
+            </p>
+
+            <div class="input-area">
+
+                <textarea
+                    id="moodInput"
+                    placeholder="Tell me how you're feeling... 
+Example: I'm feeling happy and excited today!"
+                    maxlength="500"
+                ></textarea>
+
+                <div class="character-count">
+                    <span id="charCount">0</span>/500
+                </div>
+
+            </div>
+
+            <button id="moodBtn" class="check-btn">
+                Check My Mood
+                <span>→</span>
+            </button>
+
+            <div id="moodResult" class="result hidden">
+
+                <div class="result-emoji" id="resultEmoji">😊</div>
+
+                <h2 id="resultTitle">You're feeling great!</h2>
+
+                <p id="resultText">
+                    Your words suggest a positive mood.
+                </p>
+
+                <div class="mood-meter">
+                    <div class="meter-label">
+                        <span>Mood</span>
+                        <strong id="moodScore">Positive</strong>
+                    </div>
+
+                    <div class="meter">
+                        <div id="meterFill" class="meter-fill"></div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <span>💡</span>
+                    <p id="moodTip">
+                        Keep doing what makes you happy!
+                    </p>
+                </div>
+
+                <button id="resetBtn" class="reset-btn">
+                    Check Again
+                </button>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Made with 💜 for a little everyday self-check.nilyma.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

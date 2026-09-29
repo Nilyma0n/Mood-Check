@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --plum: #3b193c;
+    --dark-plum: #241026;
+    --cream: #fff8ed;
+    --gold: #d9a441;
+    --soft-gold: #f1d18a;
+    --white: #ffffff;
+    --text: #302033;
+    --muted: #766879;
+    --border: #eadde8;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(217, 164, 65, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(126, 72, 130, 0.18),
+            transparent 35%
+        ),
+        var(--cream);
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 18px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.mood-card {
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    padding: 45px 42px;
+
+    box-shadow:
+        0 25px 70px rgba(59, 25, 60, 0.13),
+        0 5px 20px rgba(59, 25, 60, 0.06);
+
+    text-align: center;
+
+    animation: cardAppear 0.7s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.emoji {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5d9,
+            #f8e8c0
+        );
+
+    font-size: 42px;
+
+    box-shadow:
+        0 10px 25px rgba(217, 164, 65, 0.2);
+
+    transition: transform 0.3s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.08) rotate(4deg);
+}
+
+.eyebrow {
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    color: var(--plum);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 6vw, 48px);
+
+    line-height: 1.12;
+
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    max-width: 480px;
+
+    margin: 0 auto 30px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-area {
+    position: relative;
+
+    margin-bottom: 18px;
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    border: 2px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 18px 18px 35px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: var(--text);
+
+    background: #fff;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+textarea::placeholder {
+    color: #a69aa7;
+}
+
+textarea:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 4px rgba(217, 164, 65, 0.12);
+}
+
+.character-count {
+    position: absolute;
+
+    right: 14px;
+    bottom: 11px;
+
+    font-size: 11px;
+
+    color: #a69aa7;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.check-btn {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 16px 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--plum),
+            #5b285d
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.check-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(59, 25, 60, 0.22);
+}
+
+.check-btn:active {
+    transform: translateY(0);
+}
+
+.check-btn span {
+    font-size: 20px;
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+    margin-top: 30px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--border);
+
+    animation: resultAppear 0.5s ease;
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.result-emoji {
+    font-size: 52px;
+
+    margin-bottom: 12px;
+}
+
+.result h2 {
+    color: var(--plum);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.result > p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   MOOD METER
+========================= */
+
+.mood-meter {
+    margin-top: 25px;
+
+    text-align: left;
+}
+
+.meter-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+.meter-label strong {
+    color: var(--plum);
+}
+
+.meter {
+    height: 9px;
+
+    border-radius: 20px;
+
+    background: #eee6ee;
+
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #78a85b
+        );
+
+    transition: width 0.8s ease;
+}
+
+/* =========================
+   TIP
+========================= */
+
+.tip-box {
+    margin-top: 22px;
+
+    padding: 15px 17px;
+
+    border-radius: 15px;
+
+    background: #fff8e8;
+
+    border: 1px solid #f1dfb4;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    text-align: left;
+}
+
+.tip-box span {
+    font-size: 18px;
+}
+
+.tip-box p {
+    color: #67572e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   RESET
+========================= */
+
+.reset-btn {
+    margin-top: 22px;
+
+    padding: 11px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--plum);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: var(--gold);
+
+    background: #fffaf0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #8a7d8b;
+
+    font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    .mood-card {
+        padding: 32px 20px;
+
+        border-radius: 22px;
+    }
+
+    .emoji {
+        width: 70px;
+        height: 70px;
+
+        font-size: 36px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    textarea {
+        min-height: 135px;
+    }
+}
